@@ -17,13 +17,13 @@
 
 
 
-impulse: /give @p minecraft:spawn_egg 1 0 {EntityTag:{id:"Squid"},display:{Name:"spawnMeg",Lore:["Use this to spawn","a Material Emancipation Grid"]}}
-impulse: /give @p minecraft:spawn_egg 1 0 {EntityTag:{id:"Squid"},display:{Name:"deleteMeg",Lore:["Use this to delete","a Material Emancipation Grid"]}}
+impulse: /give @p spawn_egg 1 0 {EntityTag:{id:"minecraft:squid"},display:{Name:"spawnMeg",Lore:["Use this to spawn","a Material Emancipation Grid"]}}
+impulse: /give @p spawn_egg 1 0 {EntityTag:{id:"minecraft:squid"},display:{Name:"deleteMeg",Lore:["Use this to delete","a Material Emancipation Grid"]}}
 
-repeat: /execute @e[type=Squid,name=spawnMeg] ~ ~ ~ /summon ArmorStand ~ ~ ~ {CustomName:ACV_MEG,NoGravity:1,Invisible:1,Invulnerable:1,Marker:1,Passengers:[{id:Creeper,CustomName:ACV_MEG,Invulnerable:1,NoAI:1,powered:1,PersistenceRequired:1,ActiveEffects:[{Amplifier:1,Duration:1000000,Id:14,ShowParticles:0b}]}]}
-/tp @e[type=Squid,name=spawnMeg] ~ -100 ~
-/execute @e[type=Squid,name=deleteMeg] ~ ~ ~ /tp @e[name=ACV_MEG,dy=-1] ~ -100 ~
-/tp @e[type=Squid,name=deleteMeg] ~ -100 ~
+repeat: /execute @e[type=squid,name=spawnMeg] ~ ~ ~ /summon armor_stand ~ ~ ~ {CustomName:ACV_MEG,NoGravity:1,Invisible:1,Invulnerable:1,Marker:1,Passengers:[{id:creeper,CustomName:ACV_MEG,Invulnerable:1,NoAI:1,powered:1,PersistenceRequired:1,ActiveEffects:[{Amplifier:1,Duration:1000000,Id:14,ShowParticles:0b}]}]}
+/tp @e[type=squid,name=spawnMeg] ~ -100 ~
+/execute @e[type=squid,name=deleteMeg] ~ ~ ~ /tp @e[name=ACV_MEG,dy=-1] ~ -100 ~
+/tp @e[type=squid,name=deleteMeg] ~ -100 ~
 
 
 
@@ -34,10 +34,10 @@ repeat: /execute @e[type=Squid,name=spawnMeg] ~ ~ ~ /summon ArmorStand ~ ~ ~ {Cu
 /scoreboard players set @a[rym=-135,ry=-45] MMH_Rotation 2
 /scoreboard players set @a[rym=-45,ry=45] MMH_Rotation 3
 
-/summon ArmorStand ~ ~-1 ~-1 {CustomName:"MMH_loadChunks",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ~ ~-1 ~-1 {CustomName:"MMH_loadChunks",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 
 impulse: /setblock ~ ~ ~-1 stone
-/summon Bat ~ ~ ~ {CustomName:"MMH_Chunkloader",CustomNameVisible:0b,Silent:1}
+/summon bat ~ ~ ~ {CustomName:"MMH_Chunkloader",CustomNameVisible:0b,Silent:1}
 /spreadplayers 23 23 0 1 false @e[name=MMH_Chunkloader]
 /kill @e[name=MMH_Chunkloader]
 # Return
@@ -51,16 +51,16 @@ impulse: /setblock ~ ~ ~-1 stone
 # Blue Gel
 /summon Item ~-1 ~-1 ~-1 {CustomName:"ACV_BlueGel",Age:-32768,PickupDelay:32767,Item:{Count:1,Damage:11,id:"minecraft:wool"}}
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Blue Gel"},EntityTag:{id:"Chicken",CustomName:"MMH_BlueGelSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Blue Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_BlueGelSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~5 ~3 16 1 16
 
 repeat: /testfor @e[type=Chicken,name=MMH_BlueGelSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_BlueGelSpawner] ~ ~ ~ /clone 16 1 16 18 5 18 ~-1 ~1 ~-1 masked
@@ -74,16 +74,16 @@ impulse: /setblock ${-1} stone
 # Orange Gel
 /summon Item ~-1 ~-1 ~-1 {CustomName:"ACV_OrangeGel",Age:-32768,PickupDelay:32767,Item:{Count:1,Damage:1,id:"minecraft:wool"}}
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Orange Gel"},EntityTag:{id:"Chicken",CustomName:"MMH_OrangeGelSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Orange Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_OrangeGelSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~5 ~3 20 1 16
 
 repeat: /testfor @e[type=Chicken,name=MMH_OrangeGelSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_OrangeGelSpawner] ~ ~ ~ /clone 20 1 16 22 5 18 ~-1 ~1 ~-1 masked
@@ -97,18 +97,18 @@ impulse: /setblock ${-1} stone
 # Cube Dispenser
 repeat: /testfor @e[name=Weighted_Storage_Cube,c=1,tag=1]
 /blockdata ${-1} {SuccessCount:1}
-conditional: /summon ArmorStand ~1 ~-2 ~-1 {CustomName:"Weighted_Storage_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Damage:6,id:"stone"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:0b,Tags:["1"]}
+conditional: /summon armor_stand ~1 ~-2 ~-1 {CustomName:"Weighted_Storage_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Count:1,Damage:6,id:"stone"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:0b,Tags:["1"]}
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Cube Dispenser"},EntityTag:{id:"Chicken",CustomName:"MMH_CubeDispenser",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_CubeDispenser",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~4 ~3 24 1 16
 
 repeat: /testfor @e[type=Chicken,name=MMH_CubeDispenser]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_CubeDispenser] ~ ~ ~ /clone 24 1 16 26 4 18 ~-1 ~1 ~-1 masked
@@ -122,18 +122,18 @@ impulse: /setblock ${-1} stone
 # Redirecting Cube Dispenser
 repeat: /testfor @e[name=Weighted_Storage_Cube,c=1,tag=1]
 /blockdata ${-1} {SuccessCount:1}
-conditional: /summon ArmorStand ~1 ~-2 ~-1 {CustomName:"Weighted_Storage_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{id:"dispenser"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:0b,Tags:["ACV_Redirecting","1"]}
+conditional: /summon armor_stand ~1 ~-2 ~-1 {CustomName:"Weighted_Storage_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Count:1,id:"dispenser"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:0b,Tags:["ACV_Redirecting","1"]}
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Redirecting Cube Dispenser"},EntityTag:{id:"Chicken",CustomName:"MMH_RedirectingCubeDispenser",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Redirecting Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_RedirectingCubeDispenser",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~4 ~3 28 1 16
 
 repeat: /testfor @e[type=Chicken,name=MMH_RedirectingCubeDispenser]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_RedirectingCubeDispenser] ~ ~ ~ /clone 28 1 16 30 4 18 ~-1 ~1 ~-1 masked
@@ -145,29 +145,29 @@ impulse: /setblock ${-1} stone
 
 
 # Portal Spawner
-impulse: /summon ArmorStand ~ ~ ~2 {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~ ~ ~2 {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 /scoreboard players set Color ACV_Interface 0
 /execute @e[name=ACV_remote_createPortal] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-impulse: /summon ArmorStand ~ ~ ~-2 {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~ ~ ~-2 {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 /scoreboard players set Color ACV_Interface 0
 /execute @e[name=ACV_remote_createPortal] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-impulse: /summon ArmorStand ~2 ~ ~ {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~2 ~ ~ {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 /scoreboard players set Color ACV_Interface 0
 /execute @e[name=ACV_remote_createPortal] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-impulse: /summon ArmorStand ~-2 ~ ~ {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~-2 ~ ~ {CustomName:"ACV_remote_createPortal_PARAM",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 /scoreboard players set Color ACV_Interface 0
 /execute @e[name=ACV_remote_createPortal] ~ ~ ~ /setblock ~ ~ ~ redstone_block
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Portal Spawner"},EntityTag:{id:"Chicken",CustomName:"MMH_PortalSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Portal Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_PortalSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~3 ~3 16 1 20
 
 repeat: /testfor @e[type=Chicken,name=MMH_PortalSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_PortalSpawner] ~ ~ ~ /scoreboard players operation Rotation MMH_Rotation = @p MMH_Rotation
@@ -186,25 +186,25 @@ impulse: /setblock ${-1} stone
 
 
 # Light Bridge Spawner
-impulse: /summon ArmorStand ~ ~1 ~2 {CustomName:"ACV_LightBridge",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~ ~-1 ~2 {CustomName:"ACV_AntiBridge",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~ ~1 ~-2 {CustomName:"ACV_LightBridge",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~ ~-1 ~-2 {CustomName:"ACV_AntiBridge",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~-2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~-2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~ ~1 ~2 {CustomName:"ACV_LightBridge",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~ ~-1 ~2 {CustomName:"ACV_AntiBridge",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~ ~1 ~-2 {CustomName:"ACV_LightBridge",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~ ~-1 ~-2 {CustomName:"ACV_AntiBridge",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~-2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~-2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Light Bridge Spawner"},EntityTag:{id:"Chicken",CustomName:"MMH_LightBridgeSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Light Bridge Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_LightBridgeSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~3 ~3 20 1 20
 
 repeat: /testfor @e[type=Chicken,name=MMH_LightBridgeSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_LightBridgeSpawner] ~ ~ ~ /scoreboard players operation Rotation MMH_Rotation = @p MMH_Rotation
@@ -223,21 +223,21 @@ impulse: /setblock ${-1} stone
 
 
 # Laser Spawner
-impulse: /summon ArmorStand ~3 ~1 ~1 {CustomName:"ACV_Laser",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~-1 ~1 ~3 {CustomName:"ACV_Laser",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~-3 ~1 ~-1 {CustomName:"ACV_Laser",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon ArmorStand ~1 ~1 ~-3 {CustomName:"ACV_Laser",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~3 ~1 ~1 {CustomName:"ACV_Laser",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~-1 ~1 ~3 {CustomName:"ACV_Laser",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~-3 ~1 ~-1 {CustomName:"ACV_Laser",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon armor_stand ~1 ~1 ~-3 {CustomName:"ACV_Laser",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 
-impulse: /give @p minecraft:spawn_egg 1 0 {display:{Name:"Laser Spawner"},EntityTag:{id:"Chicken",CustomName:"MMH_LaserSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Laser Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_LaserSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-/summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+/summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~2 ~8 ~2 24 1 20
 
 repeat: /testfor @e[type=Chicken,name=MMH_LaserSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
-conditional: /summon ArmorStand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /execute @e[type=Chicken,name=MMH_LaserSpawner] ~ ~ ~ /scoreboard players operation Rotation MMH_Rotation = @p MMH_Rotation
