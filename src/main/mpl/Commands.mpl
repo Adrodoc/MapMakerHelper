@@ -223,10 +223,10 @@ impulse: /setblock ${-1} stone
 
 
 # Laser Spawner
-impulse: /summon armor_stand ~3 ~1 ~1 {CustomName:"ACV_Laser",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~-1 ~1 ~3 {CustomName:"ACV_Laser",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~-3 ~1 ~-1 {CustomName:"ACV_Laser",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~1 ~1 ~-3 {CustomName:"ACV_Laser",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon area_effect_cloud ~3 ~1 ~1 {CustomName:"ACV_Laser",Rotation:[-90.0f,0.0f],Duration:2147483647}
+impulse: /summon area_effect_cloud ~-1 ~1 ~3 {CustomName:"ACV_Laser",Rotation:[0.0f,0.0f],Duration:2147483647}
+impulse: /summon area_effect_cloud ~-3 ~1 ~-1 {CustomName:"ACV_Laser",Rotation:[90.0f,0.0f],Duration:2147483647}
+impulse: /summon area_effect_cloud ~1 ~1 ~-3 {CustomName:"ACV_Laser",Rotation:[180.0f,0.0f],Duration:2147483647}
 
 impulse: /give @p spawn_egg 1 0 {display:{Name:"Laser Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_LaserSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
