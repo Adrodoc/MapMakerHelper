@@ -186,14 +186,25 @@ impulse: /setblock ${-1} stone
 
 
 # Light Bridge Spawner
-impulse: /summon armor_stand ~ ~1 ~2 {CustomName:"ACV_LightBridge",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~ ~-1 ~2 {CustomName:"ACV_AntiBridge",Rotation:[0.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~ ~1 ~-2 {CustomName:"ACV_LightBridge",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~ ~-1 ~-2 {CustomName:"ACV_AntiBridge",Rotation:[180.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[-90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~-2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
-impulse: /summon armor_stand ~-2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[90.0f,0.0f],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
+impulse: /summon area_effect_cloud ~2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[-90.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_lightBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+impulse: /summon area_effect_cloud ~2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[-90.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_antiBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+
+impulse: /summon area_effect_cloud ~ ~1 ~2 {CustomName:"ACV_LightBridge",Rotation:[0.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_lightBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+impulse: /summon area_effect_cloud ~ ~-1 ~2 {CustomName:"ACV_AntiBridge",Rotation:[0.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_antiBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+
+impulse: /summon area_effect_cloud ~-2 ~1 ~ {CustomName:"ACV_LightBridge",Rotation:[90.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_lightBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+impulse: /summon area_effect_cloud ~-2 ~-1 ~ {CustomName:"ACV_AntiBridge",Rotation:[90.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_antiBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+
+impulse: /summon area_effect_cloud ~ ~1 ~-2 {CustomName:"ACV_LightBridge",Rotation:[180.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_lightBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
+impulse: /summon area_effect_cloud ~ ~-1 ~-2 {CustomName:"ACV_AntiBridge",Rotation:[180.0f,0.0f],Duration:2147483647}
+/execute @e[name=ACV_antiBridges] ~ ~ ~ setblock ~ ~ ~ redstone_block
 
 impulse: /give @p spawn_egg 1 0 {display:{Name:"Light Bridge Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_LightBridgeSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
