@@ -48,47 +48,47 @@ impulse: /setblock ~ ~ ~-1 stone
 
 
 
-# Blue Gel
-/summon Item ~-1 ~-1 ~-1 {CustomName:"ACV_BlueGel",Age:-32768,PickupDelay:32767,Item:{Count:1,Damage:11,id:"minecraft:wool"}}
+# Repulsion Gel Spawner
+/summon item ~-1 ~-1 ~-1 {CustomName:"ACV_RepulsionGel",PickupDelay:32767,Item:{Count:1,Damage:11,id:"minecraft:wool"}}
 
-impulse: /give @p spawn_egg 1 0 {display:{Name:"Blue Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_BlueGelSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Repulsion Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_RepulsionGelSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
 /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~5 ~3 16 1 16
 
-repeat: /testfor @e[type=Chicken,name=MMH_BlueGelSpawner]
+repeat: /testfor @e[type=Chicken,name=MMH_RepulsionGelSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
 conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
-/execute @e[type=Chicken,name=MMH_BlueGelSpawner] ~ ~ ~ /clone 16 1 16 18 5 18 ~-1 ~1 ~-1 masked
-/execute @e[type=Chicken,name=MMH_BlueGelSpawner] ~ ~1 ~ /fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
-/tp @e[type=Chicken,name=MMH_BlueGelSpawner] ~ -100 ~
+/execute @e[type=Chicken,name=MMH_RepulsionGelSpawner] ~ ~ ~ /clone 16 1 16 18 5 18 ~-1 ~1 ~-1 masked
+/execute @e[type=Chicken,name=MMH_RepulsionGelSpawner] ~ ~1 ~ /fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
+/tp @e[type=Chicken,name=MMH_RepulsionGelSpawner] ~ -100 ~
 
 
 
 
 
-# Orange Gel
-/summon Item ~-1 ~-1 ~-1 {CustomName:"ACV_OrangeGel",Age:-32768,PickupDelay:32767,Item:{Count:1,Damage:1,id:"minecraft:wool"}}
+# Propulsion Gel Spawner
+/summon item ~-1 ~-1 ~-1 {CustomName:"ACV_PropulsionGel",PickupDelay:32767,Item:{Count:1,Damage:1,id:"minecraft:wool"}}
 
-impulse: /give @p spawn_egg 1 0 {display:{Name:"Orange Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_OrangeGelSpawner",Silent:1}}
+impulse: /give @p spawn_egg 1 0 {display:{Name:"Propulsion Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_PropulsionGelSpawner",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
 /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
 /clone ~1 ~1 ~1 ~3 ~5 ~3 20 1 16
 
-repeat: /testfor @e[type=Chicken,name=MMH_OrangeGelSpawner]
+repeat: /testfor @e[type=Chicken,name=MMH_PropulsionGelSpawner]
 conditional: /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
 conditional: /summon armor_stand ${1} {CustomName:"MMH_loadChunks_return",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}
 $ pass
 impulse: /setblock ${-1} stone
-/execute @e[type=Chicken,name=MMH_OrangeGelSpawner] ~ ~ ~ /clone 20 1 16 22 5 18 ~-1 ~1 ~-1 masked
-/execute @e[type=Chicken,name=MMH_OrangeGelSpawner] ~ ~1 ~ /fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
-/tp @e[type=Chicken,name=MMH_OrangeGelSpawner] ~ -100 ~
+/execute @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ ~ ~ /clone 20 1 16 22 5 18 ~-1 ~1 ~-1 masked
+/execute @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ ~1 ~ /fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
+/tp @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ -100 ~
 
 
 
