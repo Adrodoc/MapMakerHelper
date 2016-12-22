@@ -95,9 +95,9 @@ impulse: /setblock ${-1} stone
 
 
 # Cube Dispenser
-repeat: /testfor @e[name=Weighted_Storage_Cube,c=1,tag=1]
+repeat: /testfor @e[type=armor_stand,name=ACV_Cube,tag=1]
 /blockdata ${-1} {SuccessCount:1}
-conditional: /summon armor_stand ~1 ~-2 ~-1 {CustomName:"Weighted_Storage_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Count:1,Damage:6,id:"stone"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:0b,Tags:["1"]}
+conditional: /summon armor_stand ~1 ~-2 ~-1 {CustomName:"ACV_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Count:1,Damage:6,id:"stone"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:["1"]}
 
 impulse: /give @p spawn_egg 1 0 {display:{Name:"Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_CubeDispenser",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
@@ -120,9 +120,9 @@ impulse: /setblock ${-1} stone
 
 
 # Redirecting Cube Dispenser
-repeat: /testfor @e[name=Weighted_Storage_Cube,c=1,tag=1]
+repeat: /testfor @e[type=armor_stand,name=ACV_Cube,tag=1]
 /blockdata ${-1} {SuccessCount:1}
-conditional: /summon armor_stand ~1 ~-2 ~-1 {CustomName:"Weighted_Storage_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Count:1,id:"dispenser"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:0b,Tags:["ACV_Redirecting","1"]}
+conditional: /summon armor_stand ~1 ~-2 ~-1 {CustomName:"ACV_Cube",DisabledSlots:2035728,ArmorItems:[{},{},{},{Count:1,id:"dispenser"}],NoGravity:1b,Invisible:1b,Invulnerable:1b,Tags:["ACV_Redirecting","1"]}
 
 impulse: /give @p spawn_egg 1 0 {display:{Name:"Redirecting Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_RedirectingCubeDispenser",Silent:1}}
 /execute @e[name=MMH_loadChunks] ~ ~ ~ /setblock ~ ~ ~ redstone_block
