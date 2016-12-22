@@ -5,6 +5,7 @@ include "MMH_weightedStorageCubeSpawner.mpl"
 include "MMH_discouragementRedirectionCubeSpawner.mpl"
 include "MMH_repulsionGelSpawner.mpl"
 include "MMH_propulsionGelSpawner.mpl"
+include "MMH_cleansingGelSpawner.mpl"
 
 project MMH {
   orientation "zy-x"

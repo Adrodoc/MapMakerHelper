@@ -8,7 +8,7 @@ if: /testfor @e[type=Chicken,name=MMH_PropulsionGelSpawner]
 then {
   MMH_loadChunks()
   /execute @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ ~ ~ clone 20 1 24 22 5 26 ~-1 ~ ~-1 masked
-  /execute @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ ~1 ~ fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
+  /execute @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ ~ ~ fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
   /tp @e[type=Chicken,name=MMH_PropulsionGelSpawner] ~ -100 ~
 }
 }
