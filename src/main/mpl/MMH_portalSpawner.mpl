@@ -1,4 +1,4 @@
-//impulse: /give @p spawn_egg 1 0 {display:{Name:"Portal Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_PortalSpawner",Silent:1}}
+//impulse: /give @p spawn_egg 1 0 {display:{Name:"Portal Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_PortalSpawner",Silent:1,NoGravity:1}}
 //MMH_loadChunks()
 ///clone ~1 ~1 ~1 ~3 ~3 ~3 16 1 20
 

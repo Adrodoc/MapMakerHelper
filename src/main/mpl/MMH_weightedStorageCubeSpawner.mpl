@@ -1,4 +1,4 @@
-//impulse: /give @p spawn_egg 1 0 {display:{Name:"Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_CubeDispenser",Silent:1}}
+//impulse: /give @p spawn_egg 1 0 {display:{Name:"Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_CubeDispenser",Silent:1,NoGravity:1}}
 //MMH_loadChunks()
 ///clone ~1 ~1 ~1 ~3 ~4 ~3 24 1 16
 

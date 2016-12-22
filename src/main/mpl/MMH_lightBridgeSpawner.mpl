@@ -1,4 +1,4 @@
-//impulse: /give @p spawn_egg 1 0 {display:{Name:"Light Bridge Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_LightBridgeSpawner",Silent:1}}
+//impulse: /give @p spawn_egg 1 0 {display:{Name:"Light Bridge Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_LightBridgeSpawner",Silent:1,NoGravity:1}}
 //MMH_loadChunks()
 ///clone ~1 ~1 ~1 ~3 ~3 ~3 20 1 20
 
