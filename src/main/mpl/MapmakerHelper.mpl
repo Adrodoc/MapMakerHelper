@@ -1,3 +1,4 @@
+include "MMH_megs.mpl"
 include "MMH_portalSpawner.mpl"
 include "MMH_lightBridgeSpawner.mpl"
 include "MMH_laserSpawner.mpl"
