@@ -1,15 +1,15 @@
-//impulse: /give @p spawn_egg 1 0 {display:{Name:"Cube Dispenser"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_CubeDispenser",Silent:1,NoGravity:1}}
+//impulse: /give @p spawn_egg 1 0 {display:{Name:"Cube Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_CubeSpawner",Silent:1,NoGravity:1}}
 //MMH_loadChunks()
 ///clone ~1 ~1 ~1 ~3 ~4 ~3 16 1 20
 
 #MMH
 repeat process MMH_weightedStorageCubeSpawner {
-if: /testfor @e[type=Chicken,name=MMH_CubeDispenser]
+if: /testfor @e[type=Chicken,name=MMH_CubeSpawner]
 then {
   MMH_loadChunks()
-  /execute @e[type=Chicken,name=MMH_CubeDispenser] ~ ~ ~ clone 16 1 20 18 4 22 ~-1 ~ ~-1 masked
-  /execute @e[type=Chicken,name=MMH_CubeDispenser] ~ ~ ~ fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
-  /tp @e[type=Chicken,name=MMH_CubeDispenser] ~ -100 ~
+  /execute @e[type=Chicken,name=MMH_CubeSpawner] ~ ~ ~ clone 16 1 20 18 4 22 ~-1 ~ ~-1 masked
+  /execute @e[type=Chicken,name=MMH_CubeSpawner] ~ ~ ~ fill ~ ~ ~ ~ ~ ~ air 0 replace pumpkin
+  /tp @e[type=Chicken,name=MMH_CubeSpawner] ~ -100 ~
 }
 }
 

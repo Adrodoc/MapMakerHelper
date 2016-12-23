@@ -1,4 +1,4 @@
-//impulse: /give @p spawn_egg 1 0 {display:{Name:"Repulsion Gel"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_RepulsionGelSpawner",Silent:1,NoGravity:1}}
+//impulse: /give @p spawn_egg 1 0 {display:{Name:"Repulsion Gel Spawner"},EntityTag:{id:"minecraft:chicken",CustomName:"MMH_RepulsionGelSpawner",Silent:1,NoGravity:1}}
 //MMH_loadChunks()
 ///clone ~1 ~1 ~1 ~3 ~5 ~3 16 1 24
 
