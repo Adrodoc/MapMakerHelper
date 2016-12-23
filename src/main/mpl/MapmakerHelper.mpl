@@ -19,7 +19,7 @@ project MMH {
 install {
   /scoreboard objectives add MMH_Rotation dummy
   start @e[tag=MMH]
-  /tellraw @a {"text":"","extra":[{"text":"Welcome to","color":"dark_green"},{"text":" Mapmaker Helper\n","color":"green"},{"text":"   Version: ","color":"aqua"},{"text":"2.0.2\n","color":"dark_aqua","italic":"true"},{"text":"   made by ","color":"aqua","italic":"true"},{"text":"Adrodoc55\n","color":"dark_aqua","hoverEvent":{"action":"show_text","value":{"text":"Click to open YouTube Channel","color":"red"}},"clickEvent":{"action":"open_url","value":"https://www.youtube.com/user/Adrodoc55"}}]}
+  /tellraw @a [{"text":"Welcome to","color":"dark_green"},{"text":" Mapmaker Helper\n","color":"green"},{"text":"   Version: ","color":"aqua"},{"text":"2.0.2\n","color":"dark_aqua","italic":"true"},{"text":"   made by ","color":"aqua","italic":"true"},{"text":"Adrodoc55\n","color":"dark_aqua","hoverEvent":{"action":"show_text","value":{"text":"Click to open YouTube Channel","color":"red"}},"clickEvent":{"action":"open_url","value":"https://www.youtube.com/user/Adrodoc55"}}]
 }
 
 uninstall {
